@@ -152,3 +152,18 @@ mysql> SELECT wizard.*
 | 84 | Molly     | Weasley  |
 +----+-----------+----------+
 9 rows in set (0.28 sec)
+
+mysql> SELECT w.firstname, w.lastname FROM wizard w LEFT JOIN player p ON w.id=p.wizard_id WHERE p.wizard_id IS NULL;
++-----------+----------+
+| firstname | lastname |
++-----------+----------+
+| Terry     | Boot     |
+| Crabbe    |          |
+| Remus     | Lupin    |
+| Padma     | Patil    |
+| Parvati   | Patil    |
+| Demelza   | Robins   |
+| Horace    | Slughorn |
+| Charles   | Weasley  |
+| Molly     | Weasley  |
++-----------+----------+
